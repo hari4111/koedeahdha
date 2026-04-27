@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>✨ Happy Birthday Ponneyyy! ✨</title>
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      /* LIGHT SOFT PINK THEME */
+      background: linear-gradient(145deg, #000000 0%, #c3aeae 40%, #a39696 100%);
+      min-height: 100vh;
+      padding: 20px 20px 40px;
+      color: #5e2e4a;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(17, 16, 16, 0.5) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 70%, rgba(21, 16, 19, 0.4) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .content-wrapper {
+      max-width: 1300px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ----- TYPING HEADER ----- */
+    .hero {
+      text-align: center;
+      margin: 10px 0 25px;
+      position: relative;
+    }
+
+    .typewriter-container {
+      display: inline-block;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 20px 35px;
+      border-radius: 80px;
+      box-shadow: 0 15px 35px rgba(210, 120, 150, 0.2), 0 0 0 2px #ff0026 inset, 0 0 20px #ff0040;
+      border: 1px solid rgba(0, 0, 0, 0.8);
+    }
+
+    #typewriter {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #ffd500;
+      text-shadow: 0 0 15px #ff0048, 0 0 30px #ff0037;
+      letter-spacing: 2px;
+      min-height: 4.5rem;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 6px;
+      margin-left: 6px;
+      background: #fff700;
+      animation: blinkCursor 0.9s infinite;
+      box-shadow: 0 0 10px #000000;
+    }
+
+    @keyframes blinkCursor {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    .charm-badge {
+      margin-top: 8px;
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #b34e6f;
+      text-shadow: 0 0 8px #ffb0c2;
+    }
+
+    /* ----- BULB LIGHTS (blinking) pastel colors ----- */
+    .bulb-string {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 22px;
+      flex-wrap: wrap;
+      margin: 15px 0 30px;
+      padding: 12px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 60px;
+      backdrop-filter: blur(5px);
+      border: 1px dashed #000000;
+    }
+
+    .bulb {
+      font-size: 2.2rem;
+      filter: drop-shadow(0 0 12px currentColor);
+      animation: bulbPulse 1.8s infinite alternate ease-in-out;
+    }
+
+    .bulb:nth-child(1) { color: #ff0040; animation-delay: 0s; }
+    .bulb:nth-child(2) { color: #ffc400; animation-delay: 0.3s; }
+    .bulb:nth-child(3) { color: #77ff00; animation-delay: 0.6s; }
+    .bulb:nth-child(4) { color: #00eaff; animation-delay: 0.9s; }
+    .bulb:nth-child(5) { color: #0004ff; animation-delay: 0.2s; }
+    .bulb:nth-child(6) { color: #e100ff; animation-delay: 0.7s; }
+    .bulb:nth-child(7) { color: #ff00ae; animation-delay: 1.0s; }
+    .bulb:nth-child(8) { color: #ff0000; animation-delay: 0.4s; }
+    .bulb:nth-child(9) { color: #006eff; animation-delay: 1.1s; }
+    .bulb:nth-child(10) { color: #ff7b00; animation-delay: 0.5s; }
+
+    @keyframes bulbPulse {
+      0% { opacity: 0.6; transform: scale(0.9); text-shadow: 0 0 8px currentColor; }
+      100% { opacity: 1; transform: scale(1.2); text-shadow: 0 0 25px currentColor, 0 0 30px rgb(0, 0, 0); }
+    }
+
+    /* ----- ANIMATED CAKE CUTTING SECTION (soft pink, centered) ----- */
+    .cake-cutting-area {
+      display: flex;
+      justify-content: center;
+      margin: 20px 0 30px;
+    }
+    .cake-card {
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(12px);
+      padding: 25px 30px;
+      border-radius: 60px;
+      box-shadow: 0 15px 30px rgba(245, 1, 66, 0.2), 0 0 0 2px #ffd0dd inset;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      border: 1px solid #ffc2d1;
+    }
+
+    .cake-wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px 0 20px;
+    }
+
+    .cake {
+      width: 240px;
+      margin: 0 auto;
+      transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .cake-layer {
+      height: 45px;
+      background: #fdd5c4;
+      border-radius: 12px 12px 20px 20px;
+      margin-bottom: 6px;
+      box-shadow: 0 6px 0 #d99e8a, inset 0 2px 10px #ffe8df;
+      border-bottom: 2px solid #e0a391;
+      transition: all 0.4s;
+      position: relative;
+    }
+
+    .cake-layer.middle {
+      height: 50px;
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #fecfbb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #ff017c;
+      text-shadow: 1px 1px 0 #ffdfd0;
+    }
+
+    /* Cake text */
+    .cake-text {
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .cake-layer.top {
+      height: 40px;
+      width: 160px;
+      margin-left: auto;
+      margin-right: auto;
+      background: #ffe3d6;
+      border-radius: 30px 30px 15px 15px;
+    }
+
+    .frosting {
+      height: 18px;
+      background: #ffb6c1;
+      border-radius: 20px 20px 8px 8px;
+      margin-bottom: 3px;
+      box-shadow: inset 0 3px 6px #fff0f5, 0 4px 0 #d47e9a;
+    }
+
+    .candles {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      margin: 8px 0 5px;
+      position: relative;
+    }
+
+    .candle {
+      width: 12px;
+      height: 30px;
+      background: #ffdb9f;
+      border-radius: 6px 6px 3px 3px;
+      position: relative;
+      box-shadow: inset -2px 0 5px #e3b37c, 0 4px 0 #c49a6c;
+    }
+
+    .flame {
+      position: absolute;
+      top: -14px;
+      left: 2px;
+      width: 10px;
+      height: 16px;
+      background: #ffa07a;
+      border-radius: 50% 50% 30% 30%;
+      box-shadow: 0 0 15px #ffb08e;
+      animation: flicker 0.8s infinite alternate;
+      transition: opacity 0.2s;
+    }
+
+    .flame::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 2px;
+      width: 6px;
+      height: 8px;
+      background: #fff0b5;
+      border-radius: 50%;
+      filter: blur(2px);
+    }
+
+    .flame.out {
+      opacity: 0;
+      animation: none;
+    }
+
+    @keyframes flicker {
+      0% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px #ffa07a; }
+      100% { transform: scale(1.15, 1.3); opacity: 0.9; box-shadow: 0 0 20px #ff8c69; }
+    }
+
+    .smoke-container {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5px;
+      pointer-events: none;
+      z-index: 10;
+    }
+
+    .smoke-puff {
+      font-size: 2.5rem;
+      opacity: 0;
+      animation: smokeRise 2s ease-out forwards;
+    }
+
+    @keyframes smokeRise {
+      0% { opacity: 0.8; transform: translateY(0) scale(1); }
+      100% { opacity: 0; transform: translateY(-40px) scale(2); }
+    }
+
+    .cake.cut .cake-layer,
+    .cake.cut .frosting {
+      clip-path: polygon(0% 0%, 70% 0%, 70% 100%, 0% 100%);
+      transition: clip-path 0.6s ease-in-out;
+    }
+
+    .cake.cut .candles {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .slice-message {
+      display: none;
+      font-size: 1.8rem;
+      margin-top: 10px;
+      font-weight: bold;
+      color: #070004;
+      text-shadow: 0 0 15px #0e0203;
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .cake-btn {
+      background: #621129;
+      border: none;
+      color: #9b194f;
+      font-weight: 700;
+      font-size: 1.4rem;
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 6px 0 #d0e41b, 0 0 15px #a4c30e;
+      cursor: pointer;
+      transition: 0.1s;
+      border: 2px solid #bb2356;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cake-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #dedadc, 0 0 25px #e9e7e8;
+    }
+
+    /* SECTIONS (light pink cards) */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      border-bottom: 3px solid #d7f802;
+      padding-bottom: 10px;
+      text-shadow: 0 0 8px #f88306;
+      color: #ec8d08;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .memory-card {
+      background: rgb(0, 0, 0);
+      backdrop-filter: blur(10px);
+      border-radius: 35px;
+      padding: 25px 20px;
+      box-shadow: 0 20px 35px -5px rgb(232, 228, 229), 0 0 0 1px rgba(255, 255, 255, 0.6) inset;
+      border: 1px solid rgb(255, 255, 255);
+      transition: transform 0.2s;
+      color: #fbfbfb;
+    }
+
+    .memory-card:hover { transform: translateY(-8px); box-shadow: 0 25px 40px -5px rgb(255, 255, 0), 0 0 20px #fddb00; }
+    .memory-card i { font-size: 2.8rem; color: #ffffff; margin-bottom: 15px; text-shadow: 0 0 18px #ffffff; }
+    .memory-card h3 { font-size: 1.8rem; margin-bottom: 15px; color: #fff200; }
+    .memory-card p, .memory-card ul { font-size: 1.1rem; line-height: 1.5; color: #ffea00; }
+    .memory-card li { margin-left: 20px; padding: 5px 0; }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 25px;
+    }
+    .photo-item {
+      aspect-ratio: 1/1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 6px 0 #000000, 0 0 0 3px #e3e306;
+      transition: transform 0.2s;
+      background: #ffea00;
+    }
+    .photo-item img { width: 100%; height: 100%; object-fit: cover; }
+    .photo-item:hover { transform: scale(1.03); }
+
+    .profile-photo { margin-top: 20px; text-align: center; }
+    .profile-photo img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid #000000; box-shadow: 0 0 30px #ffb0c2; }
+
+    .full-card { grid-column: 1 / -1; }
+
+    .confetti-btn {
+      background: linear-gradient(145deg, #de6684, #92042f);
+      border: none; color: rgb(229, 255, 0); font-weight: bold; font-size: 1.6rem; padding: 15px 35px;
+      border-radius: 60px; margin: 30px auto 10px; display: inline-block;
+      box-shadow: 0 0 25px #af0a31, 0 8px 0 #de175d; cursor: pointer; transition: 0.1s;
+      border: 2px solid #bd0942; letter-spacing: 2px;
+    }
+    .confetti-btn:active { transform: translateY(6px); box-shadow: 0 0 35px #ff0044, 0 2px 0 #bd0344; }
+    .btn-wrapper { text-align: center; }
+
+    /* ----- GAMES AREA ----- */
+    .game-area {
+      background: rgb(0, 0, 0);
+      backdrop-filter: blur(8px);
+      border-radius: 50px;
+      padding: 25px 20px;
+      margin-top: 20px;
+      border: 2px solid #000000;
+    }
+
+    .games-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .game-box {
+      flex: 1 1 300px;
+      min-width: 280px;
+    }
+
+    .memory-game-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    .memory-card-game {
+      aspect-ratio: 1/1;
+      background: #000000;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.8rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 10px 0 #000000, 0 0 0 3px #000000;
+      transition: 0.1s;
+      color: #e20851;
+    }
+
+    .memory-card-game.flipped {
+      background: #ffdbe5;
+      color: #ff0073;
+      box-shadow: 0 5px 0 #ff005d, 0 0 15px #e90c2d;
+      transform: translateY(4px);
+    }
+
+    .game-status {
+      font-size: 1.5rem;
+      text-align: center;
+      margin: 15px 0 5px;
+      color: #ff0077;
+    }
+
+    .restart-btn {
+      background: #73575f;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 40px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #c8bcc2;
+      box-shadow: 0 5px 0 #ff005d;
+      cursor: pointer;
+      transition: 0.1s;
+      margin-top: 10px;
+    }
+
+    .restart-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #c42962;
+    }
+
+    /* Balloon Pop Game Styles */
+    .balloon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      justify-items: center;
+      margin: 20px 0;
+    }
+
+    .balloon {
+      font-size: 4.5rem;
+      cursor: pointer;
+      filter: drop-shadow(0 8px 8px rgb(190, 100, 130));
+      transition: transform 0.2s;
+      animation: float 3s infinite alternate ease-in-out;
+    }
+
+    .balloon:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-10px); }
+    }
+
+    .balloon-popped {
+      opacity: 0.3;
+      filter: grayscale(0.5);
+      pointer-events: none;
+      animation: none;
+    }
+
+    .balloon-stats {
+      font-size: 1.4rem;
+      text-align: center;
+      margin: 10px 0;
+      color: #844a62;
+    }
+
+    .footer-note {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 1.4rem;
+      opacity: 0.9;
+      color: #a04e6e;
+    }
+
+    @media (max-width: 700px) {
+      .photo-grid { grid-template-columns: repeat(3, 1fr); }
+      .balloon { font-size: 3.5rem; }
+    }
+    @media (max-width: 450px) {
+      .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+<div class="content-wrapper">
+  
+  <div class="hero">
+    <div class="typewriter-container">
+      <span id="typewriter"></span><span class="cursor">|</span>
+      <div class="charm-badge">
+        <i class="fas fa-crown" style="color:#ff0055;"></i> My Fav Girl · My Charm · PONNEYYYY <i class="fas fa-heart" style="color:#ff0d55;"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAKE SECTION (centered, no bunny) -->
+  <div class="cake-cutting-area">
+    <div class="cake-card">
+      <div class="cake-wrapper">
+        <div class="smoke-container" id="smokeContainer"></div>
+        <div class="cake" id="birthdayCakeVisual">
+          <div class="candles" id="candlesGroup">
+            <div class="candle" id="candle1"><div class="flame" id="flame1"></div></div>
+            <div class="candle" id="candle2"><div class="flame" id="flame2"></div></div>
+            <div class="candle" id="candle3"><div class="flame" id="flame3"></div></div>
+          </div>
+          <div class="frosting"></div>
+          <div class="cake-layer top"></div>
+          <div class="frosting"></div>
+          <!-- Middle layer with cake text -->
+          <div class="cake-layer middle">
+            <span class="cake-text">🎂 Happy Birthday Ponney 🎂</span>
+          </div>
+          <div class="frosting"></div>
+          <div class="cake-layer"></div>
+        </div>
+        <div class="slice-message" id="sliceMessage">🎂 Slice served! 🍰</div>
+      </div>
+      
+      <div class="action-buttons">
+        <button class="cake-btn" id="cutCakeBtn"><i class="fas fa-utensils"></i> Cut Cake</button>
+        <button class="cake-btn" id="blowCandlesBtn"><i class="fas fa-wind"></i> Blow Candles 💨</button>
+      </div>
+      <p style="margin-top: 12px; color:#ff0051;"><i class="fas fa-birthday-cake"></i> Cut the cake · Blow the candles!</p>
+    </div>
+  </div>
+
+  <!-- BULB LIGHTS -->
+  <div class="bulb-string">
+    <i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i><i class="fas fa-lightbulb bulb"></i>
+  </div>
+
+  <div class="btn-wrapper">
+    <button class="confetti-btn" id="confettiBombBtn"><i class="fas fa-bomb"></i> CONFETTI BOMB SPLASH! <i class="fas fa-glass-cheers"></i></button>
+  </div>
+
+  <!-- ABOUT HER & ABOUT US -->
+  <div class="section-title"><i class="fas fa-star"></i> About Her · About Us <i class="fas fa-star"></i></div>
+  <div class="card-grid">
+    <div class="memory-card">
+      <i class="fas fa-crown"></i><h3>✨ About Her ✨</h3>
+      <p>She's the kind of magic you can't explain. Ponneyyy lights up every room with her laugh. She's fierce, tender, and my absolute favorite human. I call her PONNEYYYY because she's one of a kind — my charm, my safe place, my partner-in-crime. 💖</p>
+      <div class="profile-photo">
+        <img src="https://picsum.photos/id/64/200/200" alt="Ponneyyy" loading="lazy">
+        <p><i class="fas fa-heart"></i> My Charm <i class="fas fa-heart"></i></p>
+      </div>
+    </div>
+    <div class="memory-card">
+      <i class="fas fa-hand-holding-heart"></i><h3>🌸</h3>
+      <p>I saw you on that wedding day, and it’s something I’ll never forget. That moment is very close to my heart.Since then, you’ve always made me so happy. Whenever we chat or talk on calls, everything feels better because of you.
+In these past months, I know I’ve made you feel a lot of things—anger, tears, and happiness too. I’m really sorry for anything I’ve done in the past, and even for anything I might do wrong in the future.
+No matter what happens, I will always love you. Okay, my best best friend, I love you. Many, many happy returns of the day, my Ponney ❤️
+</p>
+    </div>
+  </div>
+
+  <!-- ABOUT PONNEY UNDER ABOUT US -->
+  <div class="card-grid" style="margin-top:10px;">
+    <div class="memory-card full-card">
+      <i class="fas fa-heart" style="color:#d96c8e;"></i>
+      <h3>Song💖</h3>
+      <p>Unspoken words are delicious
+        They are only beautiful in meaning
+        I don't want to summarize you in words
+        It will keep immeasurable feelings half-way
+        There was no desire
+        My finger touches your forehead
+        My breath is enough to spread on your neck
+        All I need to do is kiss you to wake you up
+        Understand my dear
+        Unspeakable weeks are delicious
+        Unspeakable weeks are delicious
+        (find this song if u can🧐)
+      </p>
+    </div>
+  </div>
+
+  <!-- MEMORIES + 5 PHOTOS -->
+  <div class="section-title"><i class="fas fa-camera-retro"></i> 💎🎉 <i class="fas fa-film"></i></div>
+  <div class="card-grid">
+    <div class="memory-card"><i class="fas fa-book-open"></i><h3>She Likes💗</h3><ul><li><i class="fas fa-music"></i> Music</li><li><i class="fas fa-umbrella-beach"></i> Travel</li><li><i class="fas fa-pizza-slice"></i> Food and Dress</li><li><i class="fas fa-dice"></i> She really liked this one HARI🙈💗</li></ul></div>
+    <div class="memory-card"><i class="fas fa-heart-circle-bolt"></i><h3>Memories</h3><ul><li><i class="fas fa-gift"></i> First meet</li><li><i class="fas fa-road"></i> Second meet</li><li><i class="fas fa-laugh-squint"></i> Third meet</li><li><i class="fas fa-cloud-moon"></i> Fourth meet and every meet</li></ul></div>
+  </div>
+  <div class="photo-grid">
+    <div class="photo-item"><img src="https://picsum.photos/id/102/200/200" alt="mem1"></div><div class="photo-item"><img src="https://picsum.photos/id/103/200/200" alt="mem2"></div><div class="photo-item"><img src="https://picsum.photos/id/104/200/200" alt="mem3"></div><div class="photo-item"><img src="https://picsum.photos/id/106/200/200" alt="mem4"></div><div class="photo-item"><img src="https://picsum.photos/id/108/200/200" alt="mem5"></div>
+  </div>
+
+  <!-- UPCOMING + 5 PHOTOS -->
+  <div class="section-title"><i class="fas fa-calendar-alt"></i> Our Plans <i class="fas fa-map-pin"></i></div>
+  <div class="card-grid">
+    <div class="memory-card"><i class="fas fa-plane"></i><h3>🚀Mandhi</h3><ul><li>✨Unfinished Temple Date</li><li>🎂 Movie</li><li>🎬 Pinne ndha </li><li> Pinne Pinne Angane kore</li></ul></div>
+    <div class="memory-card"><i class="fas fa-champagne-glasses"></i><h3>Poem </h3><p>From that day I saw you in the crowd,A simple moment, yet it spoke so loud.You came into my life so quietly,But now you mean the whole world to me.In every laugh and every call,
+      You’re the reason I smile at all.
+Through happy days and when I’m low,You’re my comfort more than you know.I may not always get things right,I may have made your days less bright,
+But still I hope you’ll always see,How much you truly mean to me.No matter what, come what may,I’ll stand by you in every way.My best friend, my heart’s soft view,
+My Ponney… I’ll always love you 💕
+</p></div>
+  </div>
+  <div class="photo-grid">
+    <div class="photo-item"><img src="https://picsum.photos/id/20/200/200" alt="adv1"></div><div class="photo-item"><img src="https://picsum.photos/id/26/200/200" alt="adv2"></div><div class="photo-item"><img src="https://picsum.photos/id/28/200/200" alt="adv3"></div><div class="photo-item"><img src="https://picsum.photos/id/33/200/200" alt="adv4"></div><div class="photo-item"><img src="https://picsum.photos/id/39/200/200" alt="adv5"></div>
+  </div>
+
+  <!-- FUN GAMES SECTION -->
+  <div class="section-title"><i class="fas fa-gamepad"></i> Fun Games For Ponneyyy <i class="fas fa-puzzle-piece"></i></div>
+  <div class="game-area">
+    <div class="games-flex">
+      <div class="game-box">
+        <h2 style="text-align:center"><i class="fas fa-brain"></i> Memory Match <i class="fas fa-brain"></i></h2>
+        <p style="text-align:center">Find matching pairs!
+          memory illa enn ariya ennalum 🎈</p>
+        <div class="memory-game-grid" id="memoryGrid"></div>
+        <div class="game-status" id="gameStatus">Pairs found: 0 / 4</div>
+        <div style="text-align:center"><button class="restart-btn" id="restartGameBtn"><i class="fas fa-rotate-right"></i> New Game</button></div>
+      </div>
+      
+      <div class="game-box">
+        <h2 style="text-align:center"><i class="fas fa-balloon"></i> Balloon Pop! <i class="fas fa-balloon"></i></h2>
+        <p style="text-align:center">Pop all balloons for a surprise!
+          edh ndhuva enn enik arijuda ketta🎉</p>
+        <div class="balloon-grid" id="balloonGrid"></div>
+        <div class="balloon-stats" id="balloonStats">🎈 6 balloons left</div>
+        <div style="text-align:center"><button class="restart-btn" id="resetBalloonsBtn"><i class="fas fa-rotate-right"></i> New Balloons</button></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <i class="fas fa-heart" style="color:#d95c82;"></i> Happy Birthday, my Ponneyyy! You are so loved. <i class="fas fa-heart" style="color:#d95c82;"></i><br>
+    <span style="font-size:1rem;">— your forever person</span>
+  </div>
+</div>
+
+<script>
+  (function(){
+    "use strict";
+
+    // Typing
+    const typedTextEl = document.getElementById('typewriter');
+    const fullMessage = "🎂 Happy Birthday, Ponneyyy! My Fav Girl You light up my world! 💖✨";
+    let index = 0;
+    function typeNextChar() {
+      if (index < fullMessage.length) { typedTextEl.textContent += fullMessage.charAt(index); index++; setTimeout(typeNextChar, 80); }
+    }
+    typedTextEl.textContent = ''; typeNextChar();
+
+    // Cake & candles
+    const cakeVisual = document.getElementById('birthdayCakeVisual');
+    const sliceMsg = document.getElementById('sliceMessage');
+    const cutBtn = document.getElementById('cutCakeBtn');
+    const blowBtn = document.getElementById('blowCandlesBtn');
+    const flames = [document.getElementById('flame1'), document.getElementById('flame2'), document.getElementById('flame3')];
+    const smokeContainer = document.getElementById('smokeContainer');
+    
+    let isCut = false;
+    let candlesBlown = false;
+
+    function cutCakeCelebration() {
+      if (!isCut) {
+        cakeVisual.classList.add('cut');
+        sliceMsg.style.display = 'block';
+        sliceMsg.innerHTML = '🎂 Happy Birthday Ponneyyy! 🍰✨';
+        confetti({particleCount: 200, spread: 90, origin: {y:0.6}});
+        setTimeout(() => confetti({particleCount: 150, spread: 100, origin: {x:0.2, y:0.5}}), 120);
+        setTimeout(() => confetti({particleCount: 150, spread: 100, origin: {x:0.8, y:0.5}}), 250);
+        isCut = true;
+      } else {
+        confetti({particleCount: 80, spread: 60});
+        sliceMsg.innerHTML = '🍰 Another slice for Ponneyyy! 🎉';
+      }
+    }
+
+    function blowCandles() {
+      if (candlesBlown) {
+        addSmokePuffs();
+        return;
+      }
+      flames.forEach(flame => flame.classList.add('out'));
+      addSmokePuffs();
+      confetti({particleCount: 100, spread: 60, origin: {y:0.5}});
+      candlesBlown = true;
+      sliceMsg.style.display = 'block';
+      sliceMsg.innerHTML = '💨 Candles blown! Make a wish, Ponneyyy! ✨';
+    }
+
+    function addSmokePuffs() {
+      smokeContainer.innerHTML = '';
+      for (let i = 0; i < 5; i++) {
+        const puff = document.createElement('div');
+        puff.className = 'smoke-puff';
+        puff.textContent = '💨';
+        puff.style.animationDelay = (i * 0.15) + 's';
+        puff.style.fontSize = (2 + i*0.3) + 'rem';
+        smokeContainer.appendChild(puff);
+        setTimeout(() => puff.remove(), 2500);
+      }
+    }
+
+    cutBtn.addEventListener('click', cutCakeCelebration);
+    blowBtn.addEventListener('click', blowCandles);
+
+    // Confetti bomb
+    function fireConfettiBomb() {
+      confetti({particleCount: 250, spread: 100, origin: { y: 0.6 }, startVelocity: 25});
+      setTimeout(() => { confetti({particleCount: 150, angle: 60, spread: 80, origin: { x: 0, y: 0.6 }}); confetti({particleCount: 150, angle: 120, spread: 80, origin: { x: 1, y: 0.6 }}); }, 150);
+      setTimeout(() => confetti({particleCount: 200, spread: 120}), 300);
+    }
+    document.getElementById('confettiBombBtn').addEventListener('click', fireConfettiBomb);
+
+    window.addEventListener('load', ()=>{
+      confetti({particleCount: 120, spread: 70});
+      setTimeout(()=>confetti({particleCount: 80, spread: 100, origin:{x:0.7}}),200);
+    });
+
+    // Memory Game
+    const emojis = ['🎂','🎁','🎈','🎉'];
+    let cards = [...emojis, ...emojis], shuffled=[], firstIdx=null, secondIdx=null, lock=false, matched=0;
+    const gridEl = document.getElementById('memoryGrid'), statusEl = document.getElementById('gameStatus');
+
+    function shuffle(arr){ for(let i=arr.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; } return arr; }
+    function renderMemory(){
+      gridEl.innerHTML='';
+      shuffled.forEach((emoji,idx)=>{
+        const card=document.createElement('div'); card.className='memory-card-game';
+        card.dataset.index=idx; card.dataset.emoji=emoji; card.textContent='?';
+        card.addEventListener('click', onMemoryClick); gridEl.appendChild(card);
+      });
+      statusEl.textContent=`Pairs found: ${matched} / ${emojis.length}`;
+    }
+    function onMemoryClick(e){
+      const card=e.currentTarget; const idx=parseInt(card.dataset.index);
+      if(lock||card.classList.contains('flipped')) return;
+      if(firstIdx!==null && secondIdx!==null) return;
+      card.textContent=card.dataset.emoji; card.classList.add('flipped');
+      if(firstIdx===null) firstIdx=idx;
+      else if(secondIdx===null && idx!==firstIdx){
+        secondIdx=idx;
+        const c1=gridEl.children[firstIdx], c2=gridEl.children[secondIdx];
+        if(c1.dataset.emoji===c2.dataset.emoji){
+          matched++; statusEl.textContent=`Pairs found: ${matched} / ${emojis.length}`;
+          firstIdx=secondIdx=null;
+          if(matched===emojis.length){ statusEl.textContent='🎉 YOU WIN! Happy Birthday Ponneyyy! 🎉'; confetti({particleCount:300, spread:100}); }
+        } else {
+          lock=true;
+          setTimeout(()=>{
+            c1.textContent='?'; c2.textContent='?';
+            c1.classList.remove('flipped'); c2.classList.remove('flipped');
+            firstIdx=secondIdx=null; lock=false;
+          },700);
+        }
+      }
+    }
+    function initMemory(){ shuffled=shuffle([...cards]); firstIdx=secondIdx=null; lock=false; matched=0; renderMemory(); }
+    document.getElementById('restartGameBtn').addEventListener('click', ()=>{ initMemory(); confetti({particleCount:30, spread:50}); });
+    initMemory();
+
+    // Balloon Pop Game
+    const balloonColors = ['🎈', '🎈', '🎈', '🎈', '🎈', '🎈'];
+    let balloonsRemaining = 6;
+    const balloonGrid = document.getElementById('balloonGrid');
+    const balloonStats = document.getElementById('balloonStats');
+
+    function renderBalloons() {
+      balloonGrid.innerHTML = '';
+      for (let i = 0; i < balloonColors.length; i++) {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.textContent = '🎈';
+        balloon.dataset.index = i;
+        balloon.addEventListener('click', popBalloon);
+        balloonGrid.appendChild(balloon);
+      }
+      updateBalloonStats();
+    }
+
+    function popBalloon(e) {
+      const balloon = e.currentTarget;
+      if (balloon.classList.contains('balloon-popped')) return;
+      balloon.classList.add('balloon-popped');
+      balloon.textContent = '💥';
+      balloonsRemaining--;
+      updateBalloonStats();
+      confetti({particleCount: 20, spread: 40});
+      if (balloonsRemaining === 0) {
+        balloonStats.textContent = '🎉 All balloons popped! You did it! 🎉';
+        confetti({particleCount: 200, spread: 100});
+      }
+    }
+
+    function updateBalloonStats() {
+      if (balloonsRemaining > 0) balloonStats.textContent = `🎈 ${balloonsRemaining} balloon${balloonsRemaining !== 1 ? 's' : ''} left`;
+      else balloonStats.textContent = '🎉 All popped! Happy Birthday! 🎉';
+    }
+
+    function resetBalloons() {
+      balloonsRemaining = 6;
+      renderBalloons();
+    }
+
+    document.getElementById('resetBalloonsBtn').addEventListener('click', resetBalloons);
+    renderBalloons();
+  })();
+</script>
+</body>
+</html>
